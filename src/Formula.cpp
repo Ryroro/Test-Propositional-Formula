@@ -37,9 +37,6 @@ void Test_Formula::get_situation() {
 
 }
 
-void Test_Formula::set_situation() {
-  
-}
   
 // breaks the string into brackets, connectives and atoms
 void Test_Formula::reformat() {
@@ -158,8 +155,6 @@ void Test_Formula::evaluate(Node* pwalk) {
   }
 }
   
-
-
 bool Test_Formula::is_connectives() {
   int count = 0;
   while (!isspace(*iter) && count < max_connec_length) {
@@ -169,16 +164,16 @@ bool Test_Formula::is_connectives() {
   }
   if (std::find(connectives.begin(), connectives.end(), buffer) !=
       connectives.end()) {
+    
     return true;
-  }
-  else {
+    
+  } else {
+    
     return false;
 
   }
 
 }
-
-
 
 Node::Node(): left(nullptr), right(nullptr) {}
 Node:: Node(std::string& s): str(s), left(nullptr), right(nullptr) {}

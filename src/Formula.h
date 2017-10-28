@@ -8,7 +8,6 @@ public:
   Test_Formula() = default;
   void start();
   void get_situation;
-  void set_situation;
   void reformat();
   void analyze();
   void evaluate();
