@@ -1,12 +1,17 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <map>
+ 
 class Test_Formula {
 public:
   Test_Formula() = default;
   void start();
+  void get_situation;
+  void set_situation;
   void reformat();
   void analyze();
+  void evaluate();
   void result();
   void is_connectives();
   void reset_iter();
@@ -17,9 +22,12 @@ private:
   std::vector<std::string> reformat_input;
   std::string buffer;
   const std::vector<std::string&> connectives =
-    { "\\not", "\\and", "\\or", "\\then", "\\iff" };x
+    { "\\not", "\\and", "\\or", "\\then", "\\iff" };
   const int max_connec_length = 5;
   Tree tree;
+  std::map<std::string, std::bool> environ;
+  Node* pwalk;
+  
   
 };
 
@@ -31,6 +39,7 @@ class Node {
   bool val;
   Node* left;
   Node* right;
+  Node* parent;
 };
 
 class Atom : public Node {
@@ -42,8 +51,13 @@ class Atom : public Node {
 class Formula : public Node {
  public:
   Formula();
-  Node* 
-  
+};
+
+class Connective : public Node {
+ public:
+  Connective();
+  Connective(std::string&);
+}
   
 class Tree {
  public:
